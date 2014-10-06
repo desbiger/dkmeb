@@ -32,7 +32,7 @@
 	</table>
 	<?= $arResult['DETAIL_TEXT'] ?>
 	<!--   --><? //echo count($arResult['PROPERTIES']['SOSTIOT']['VALUE'])?>
-	<? if (count($arResult['PROPERTIES']['SOSTIOT']['VALUE']) > 1): ?>
+	<? if (count($arResult['PROPERTIES']['SOSTIOT']['VALUE']) > 0): ?>
 		<div style = "clear: both"></div>
 		<h3>Все размеры:</h3>
 		<hr/>

@@ -2,7 +2,7 @@
 	die();
 }
 ?>
-<!--<pre>--><?//print_r($arResult)?><!--</pre>-->
+<!--<pre>--><? //print_r($arResult)?><!--</pre>-->
 <div class = "tovar_detail">
 	<h2><?= $arResult['NAME'] ?></h2>
 
@@ -16,14 +16,15 @@
 	<table>
 		<?$not_whow = array(
 				'SOSTIOT',
+				'SPECIALOFFER',
 				'AKSS',
 				'SHOW_ON_SLIDER',
 		)?>
 		<? foreach ($arResult['PROPERTIES'] as $vol): ?>
 			<? if ($vol['VALUE'] && !in_array($vol['CODE'], $not_whow)): ?>
 				<tr>
-					<td style="width: 167px" <?= $vol['CODE'] == 'PRICE' ? " class='price'" : '' ?>><?= $vol['NAME'] ?></td>
-					<td style="padding-left: 30px" <?= $vol['CODE'] == 'PRICE' ? " class='price'" : '' ?>><?=
+					<td style = "width: 167px" <?= $vol['CODE'] == 'PRICE' ? " class='price'" : '' ?>><?= $vol['NAME'] ?></td>
+					<td style = "padding-left: 30px" <?= $vol['CODE'] == 'PRICE' ? " class='price'" : '' ?>><?=
 							$vol['CODE'] == 'PRICE' ? preg_replace("|^([0-9]+)([0-9]{3})(.*)|", "$1 $2$3", $vol['VALUE']) . " руб." : $vol['VALUE'] ?></td>
 				</tr>
 			<? endif ?>
@@ -38,27 +39,30 @@
 		<table class = "akss">
 			<tr>
 				<td>Наименование</td>
-				<td style="width: 96px">ДхШхВ</td>
+				<td style = "width: 96px">ДхШхВ</td>
 				<td>Цена, руб.</td>
 			</tr>
-<!--			<tr>-->
-<!--				<td>--><?//= $arResult['NAME'] ?><!--</td>-->
-<!--				<td style = "text-align: center">--><?//= $arResult['PROPERTIES']['SIZE']['VALUE'] ?><!--</td>-->
-<!--				<td style="text-align: right" class = "price">--><?//= preg_replace("|^([0-9]+)([0-9]{3})(.*)|", "$1 $2$3", $arResult['PROPERTIES']['PRICE']['VALUE'])
-//					?><!--</td>-->
-<!--			</tr>-->
+			<!--			<tr>-->
+			<!--				<td>--><? //= $arResult['NAME'] ?><!--</td>-->
+			<!--				<td style = "text-align: center">--><? //= $arResult['PROPERTIES']['SIZE']['VALUE'] ?><!--</td>-->
+			<!--				<td style="text-align: right" class = "price">-->
+			<? //= preg_replace("|^([0-9]+)([0-9]{3})(.*)|", "$1 $2$3", $arResult['PROPERTIES']['PRICE']['VALUE'])
+				//
+			?><!--</td>-->
+			<!--			</tr>-->
 			<? foreach ($arResult['PROPERTIES']['SOSTIOT']['VALUE'] as $vol): ?>
 				<? $obj = CIBlockElement::GetByID($vol);
-				$el = $obj->GetNextElement();
+				$el     = $obj->GetNextElement();
 
 				$element = $el->GetFields();
 				$element['PROP'] = $el->GetProperties()
 				?>
-<!--					<pre>--><?//print_r($element)?><!--</pre>-->
+				<!--					<pre>--><? //print_r($element)?><!--</pre>-->
 				<tr>
 					<td><?= $element['NAME'] ?></td>
 					<td style = "text-align: center"><?= $element['PROP']['SIZE']['VALUE'] ?></td>
-					<td style="text-align: right" class = "price"><?= preg_replace("|^([0-9]+)([0-9]{3})(.*)|", "$1 $2$3", $element['PROP']['PRICE']['VALUE'])
+					<td style = "text-align: right" class = "price"><?=
+							preg_replace("|^([0-9]+)([0-9]{3})(.*)|", "$1 $2$3", $element['PROP']['PRICE']['VALUE'])
 						?></td>
 				</tr>
 			<? endforeach ?>
@@ -70,7 +74,7 @@
 		<table class = "akss">
 			<tr>
 				<td>Наименование</td>
-				<td style="width: 96px"></td>
+				<td style = "width: 96px"></td>
 				<td>Цена, руб.</td>
 			</tr>
 			<? foreach ($arResult['PROPERTIES']['AKSS']['VALUE'] as $vol): ?>
@@ -82,8 +86,8 @@
 				<tr>
 					<td><?= $element['NAME'] ?></td>
 					<td></td>
-					<td style="text-align: right" class = "price"><?= preg_replace("|^([0-9]+)([0-9]{3})(.*)|", "$1 $2$3",
-								$element['PROP']['PRICE']['VALUE'])
+					<td style = "text-align: right" class = "price"><?=
+							preg_replace("|^([0-9]+)([0-9]{3})(.*)|", "$1 $2$3", $element['PROP']['PRICE']['VALUE'])
 						?></td>
 				</tr>
 			<? endforeach ?>

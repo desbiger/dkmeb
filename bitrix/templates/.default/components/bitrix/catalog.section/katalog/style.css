@@ -1,0 +1,22 @@
+.product{
+    width: 163px;
+    height: 192px;
+    border: 1px solid grey;
+    float: left;
+    margin: 10px;
+    position: relative;
+    text-align: center;
+}
+.product .product_picture{
+    position: absolute;
+    bottom: 5px;
+    left: 7px;
+    width: 155px;
+    height: 127px;
+    text-align: center;
+}
+.product a{
+    font-size: 12px;
+    color: black;
+    text-decoration: none;
+}

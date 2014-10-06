@@ -1,5 +1,5 @@
 <!--<pre>--><?//print_r($arResult)?><!--</pre>-->
-<div class = "left_block">
+<div class = "left_block" style="background: none!important;">
 	<h2>Спецпредложения</h2>
 	<? foreach ($arResult['ITEMS'] as $news): ?>
 		<?

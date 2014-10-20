@@ -247,11 +247,14 @@ ul.left_menu li:last-child {
     margin: 10px;
     margin-top: 0;
     float: left;
-    width: 300px;
-    padding: 15px;
+     width: 300px;
     text-align: center;
     border: 1px solid #d1d1d1;
     border-radius: 15px !important;
+    overflow: hidden;
+}
+.img_conent img{
+    margin-bottom: -3px;
 }
 
 .tovar_detail {

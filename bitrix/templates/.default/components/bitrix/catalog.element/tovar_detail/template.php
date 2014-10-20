@@ -9,7 +9,7 @@
 	<div class = "img_conent">
 		<? $img = CFile::ResizeImageGet($arResult['DETAIL_PICTURE']['ID'], array(
 				'width' => 300,
-				'height' => 300
+				'height' => 800
 		)) ?>
 		<img src = "<?= $img['src'] ?>" alt = ""/>
 	</div>

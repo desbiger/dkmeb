@@ -86,7 +86,7 @@
 				?>
 				<tr>
 					<td><?= $element['NAME'] ?></td>
-					<td></td>
+					<td><?= $element['PROP']['SIZE']['VALUE']?></td>
 					<td style = "text-align: right" class = "price"><?=
 							preg_replace("|^([0-9]+)([0-9]{3})(.*)|", "$1 $2$3", $element['PROP']['PRICE']['VALUE'])
 						?></td>

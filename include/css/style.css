@@ -287,6 +287,9 @@ table.akss tr:first-child td{
 .akss tr:nth-child(even) td{
     background-color: #e6e4e6;
 }
+.akss tr td:last-child{
+    width: 87px!important;
+}
 
 .akss tr td.price{
     font-size: 14px!important;

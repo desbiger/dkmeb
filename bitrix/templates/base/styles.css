@@ -7,3 +7,13 @@
     margin: 0;
     padding: 0;
 }
+
+.base_about{
+    width: 388px;
+}
+.base_about tr td:first-child{
+    width: 167px;
+}
+.base_about tr td:last-child{
+    padding-left: 30px;
+}

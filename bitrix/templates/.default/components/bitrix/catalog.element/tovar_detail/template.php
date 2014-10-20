@@ -13,7 +13,7 @@
 		)) ?>
 		<img src = "<?= $img['src'] ?>" alt = ""/>
 	</div>
-	<table>
+	<table class="base_about">
 		<?$not_whow = array(
 				'SOSTIOT',
 				'SPECIALOFFER',
@@ -23,16 +23,16 @@
 		<? foreach ($arResult['PROPERTIES'] as $vol): ?>
 			<? if ($vol['VALUE'] && !in_array($vol['CODE'], $not_whow)): ?>
 				<tr>
-					<td style = "width: 167px" <?= $vol['CODE'] == 'PRICE' ? " class='price'" : '' ?>><?= $vol['NAME'] ?></td>
-					<td style = "padding-left: 30px" <?= $vol['CODE'] == 'PRICE' ? " class='price'" : '' ?>><?=
+					<td <?= $vol['CODE'] == 'PRICE' ? " class='price'" : '' ?>><?= $vol['NAME'] ?></td>
+					<td <?= $vol['CODE'] == 'PRICE' ? " class='price'" : '' ?>><?=
 							$vol['CODE'] == 'PRICE' ? preg_replace("|^([0-9]+)([0-9]{3})(.*)|", "$1 $2$3", $vol['VALUE']) . " руб." : $vol['VALUE'] ?></td>
 				</tr>
 			<? endif ?>
 		<? endforeach ?>
 	</table>
 	<?= $arResult['DETAIL_TEXT'] ?>
-	<!--   --><? //echo count($arResult['PROPERTIES']['SOSTIOT']['VALUE'])?>
-	<? if (count($arResult['PROPERTIES']['SOSTIOT']['VALUE']) > 0): ?>
+	<!--	   --><? //= count($arResult['PROPERTIES']['SOSTIOT']['VALUE'])?>
+	<? if (is_array($arResult['PROPERTIES']['SOSTIOT']['VALUE'])): ?>
 		<div style = "clear: both"></div>
 		<h3>Все размеры:</h3>
 		<hr/>
@@ -68,7 +68,8 @@
 			<? endforeach ?>
 		</table>
 	<? endif ?>
-	<? if (count($arResult['PROPERTIES']['AKSS']['VALUE']) > 1): ?>
+	<? if (is_array($arResult['PROPERTIES']['AKSS']['VALUE'])): ?>
+		<div style = "clear: both"></div>
 		<h3>Аксессуары:</h3>
 		<hr/>
 		<table class = "akss">
@@ -94,3 +95,4 @@
 		</table>
 	<? endif ?>
 </div>
+

@@ -10,13 +10,16 @@
 .product .product_picture{
     position: absolute;
     bottom: 5px;
-    left: 7px;
+    left: 4px;
     width: 155px;
     height: 127px;
-    text-align: center;
+
 }
 .product a{
     font-size: 12px;
     color: black;
     text-decoration: none;
+}
+.product a div{
+    text-align: center;
 }

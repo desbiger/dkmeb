@@ -5,10 +5,14 @@
 	<title><? $APPLICATION->ShowTitle() ?></title>
 
 	<link href = "/include/css/style.css" type = "text/css" rel = "stylesheet">
+	<link href = "/bitrix/templates/base/fancybox/jquery.fancybox-1.3.4.css" type = "text/css" rel = "stylesheet">
 	<script type = "text/javascript" src = "/include/js/jquery-1.6.2.min.js"></script>
+	<script type = "text/javascript" src = "/bitrix/templates/base/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
 	<script type = "text/javascript" src = "/bitrix/templates/base/js/jquery.carouFredSel-5.5.5-packed.js"></script>
 	<script type = "text/javascript">
 		$(function () {
+			$('.fancy').fancybox();
+
 			var screen = $(window).height();
 			if ((screen - 291) > $('.content').height()) {
 				$('.content').height(screen - 291);
